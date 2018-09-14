@@ -1,0 +1,12 @@
+{
+  "name": "reason-highlightjs",
+  "version": "0.0.1",
+  "description": "Reason syntax highlighting for Highlight.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["reason", "reasonml", "bucklescript", "highlight", "highlightjs", "highlight.js"],
+  "author": "",
+  "license": "MIT"
+}
