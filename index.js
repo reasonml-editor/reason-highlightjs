@@ -33,10 +33,10 @@ module.exports = function(hljs) {
     keyword:
       'and as assert begin class constraint done downto exception external fun ' +
       'esfun function functor include inherit initializer lazy let pub mutable new nonrec ' +
-      'object of open or pri rec then to type val virtual' +
+      'object of open or pri rec then to type val virtual ' +
       'try catch finally do else for if switch while import library export ' +
       'part of show hide is as ' +
-      'module in',
+      'module in raise',
     built_in:
       'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit',
     literal:

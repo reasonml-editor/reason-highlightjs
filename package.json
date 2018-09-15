@@ -1,6 +1,6 @@
 {
   "name": "reason-highlightjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reason syntax highlighting for Highlight.js",
   "main": "index.js",
   "files": ["index.js"],

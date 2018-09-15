@@ -32,6 +32,18 @@
   ok: 'a
 };
 
+<span class="hljs-keyword">let</span> getItem = (theList) =&gt;
+  <span class="hljs-keyword">if</span> (callSomeFunctionThatThrows()) {
+    <span class="hljs-comment">/* return the found item here */</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">raise</span>(<span class="hljs-constructor">Not_found</span>)
+  };
+
+<span class="hljs-keyword">let</span> result =
+  <span class="hljs-keyword">try</span> (getItem(<span class="hljs-literal">[</span><span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span><span class="hljs-literal">]</span>)) {
+  | <span class="hljs-constructor">Not_found</span> =&gt; <span class="hljs-number">0</span> <span class="hljs-comment">/* Default value if getItem throws */</span>
+  };
+
 <span class="hljs-keyword">let</span> getCenterCoordinates = (aBla, doHello, ~b=<span class="hljs-number">1</span>, ~c, ()) =&gt; {
   <span class="hljs-keyword">let</span> x = doSomeOperationsHere(<span class="hljs-string">"a"</span>);
   <span class="hljs-keyword">let</span> yy = doSomeMoreOperationsHere();

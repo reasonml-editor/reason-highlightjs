@@ -12,6 +12,18 @@ type bla('a) = {
   ok: 'a
 };
 
+let getItem = (theList) =>
+  if (callSomeFunctionThatThrows()) {
+    /* return the found item here */
+  } else {
+    raise(Not_found)
+  };
+
+let result =
+  try (getItem([1, 2, 3])) {
+  | Not_found => 0 /* Default value if getItem throws */
+  };
+
 let getCenterCoordinates = (aBla, doHello, ~b=1, ~c, ()) => {
   let x = doSomeOperationsHere("a");
   let yy = doSomeMoreOperationsHere();
