@@ -15,12 +15,16 @@ let reasonHighlightJs = require('reason-highlightjs');
 hljs.registerLanguage('reason', reasonHighlightJs)
 ```
 
+The exposed classes for css coloring are plainly written in `index.js`. Check for the `className: ...`parts.
+
 ## Contribution
 
-`index.js` is the single source file. `test.re` is a bunch of tests.
+`index.js` is the single source file. `yarn test` to check whether your modification caused `test/expected.html` to change. Do read the tests; they're simple.
 
-Syntax highlighting using regular expressions is tricky; highlight.js is more of a tokenizer than full-blown parser, so we try not to overengineer it (though to be fair, Reason's highlightjs integration is one of the best out there).
+### Tips
 
-As a rule of thumb, try not to "wrap" around a region. E.g. for array, just detect start and end and color the braces; don't try to search for array boundary then mark the whole content as array, then list a bunch of things in said array mode's `contains`. There's not much point in doing so and this might cause some complicated recursion that might even infinite loop in some piece of code.
+When a mode has `begin` but no `end`, as per the docs, `end` will default to anything. But this doesn't mean the mode stops immediately; it'll actually cycle through its `contains` until every sub-mode fails to match.
 
-The big complexity of the highlighter is to distinguish Reason's module vs constructor, since they're both upper-cased. We've found in practice that newcomers often confuse the two, so being able to distinguish and color them differently has big value. In order to achieve this, the highlight logic has to do a bunch of lookahead for modules and use some heuristics to determine whether a particular upper-cased token is a module or constructor. This logic is best-effort (and we're violating the rule of thumb above: try not to "wrap" around a region. We kinda do for `MODULE_DECLARATION_MODE`, `FUNCTOR_DECLARATION_MODE`, etc.).
+If you wanna do a big look-ahead in `begin` then come _back_ and highlight stuff in the region you've captured, through submodes (aka `contains`), you can't ordinarily, since the submodes matchings start right _after_ the captured `begin`; too late to highlight that region (except for `keywords`, which is kinda special-cased as a config, but disregard that)! Instead, you can use `returnBegin: true` that resets the lexing process back to `begin`, and then in `contains`, proceed as desired. Aka this is basically looking-ahead without skipping past the part you've looked. Careful though, since resetting the lexer back to beginning means you might get caught in infinite loops.
+
+`contains`' order is significant. Top to bottom.

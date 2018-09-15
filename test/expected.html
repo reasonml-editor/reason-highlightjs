@@ -1,0 +1,122 @@
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../node_modules/highlight.js/styles/atom-one-light.css">
+  <style>
+    .hljs-operator {
+      color: #a626a4;
+    }
+    .hljs-character {
+      color: #50a14f;
+    }
+    .hljs-module-identifier {
+      color: #4078f2;
+    }
+    .hljs-constructor {
+      color: #e45649;
+    }
+  </style>
+</head>
+<body>
+  <pre class="hljs">
+<span class="hljs-string">"aa"</span>;
+<span class="hljs-character">'a'</span>;
+<span class="hljs-attribute">[@bs.module "foo"]</span> <span class="hljs-keyword">external</span> foo: <span class="hljs-built_in">int</span> = <span class="hljs-string">"bar"</span>;
+
+<span class="hljs-keyword">let</span> bla = <span class="hljs-number">1.</span>;
+
+<span class="hljs-keyword">let</span> <span class="hljs-literal">[</span><span class="hljs-number">1</span>, <span class="hljs-number">2.2</span><span class="hljs-literal">]</span> = foo();
+<span class="hljs-keyword">let</span> <span class="hljs-literal">[|</span>c, <span class="hljs-literal">[|</span>a, <span class="hljs-literal">[</span><span class="hljs-number">1</span><span class="hljs-literal">]</span>, c<span class="hljs-literal">|]</span>, <span class="hljs-number">2.2</span><span class="hljs-literal">|]</span> = <span class="hljs-literal">[|</span>c, <span class="hljs-number">1</span>, <span class="hljs-string">"d"</span>, <span class="hljs-character">'a'</span>, <span class="hljs-number">1</span><span class="hljs-operator">+</span><span class="hljs-number">2</span><span class="hljs-literal">|]</span>;
+
+<span class="hljs-keyword">type</span> bla('a) = {
+  a: <span class="hljs-built_in">int</span>,
+  ok: 'a
+};
+
+<span class="hljs-keyword">let</span> getCenterCoordinates = (aBla, doHello, ~b=<span class="hljs-number">1</span>, ~c, ()) =&gt; {
+  <span class="hljs-keyword">let</span> x = doSomeOperationsHere(<span class="hljs-string">"a"</span>);
+  <span class="hljs-keyword">let</span> yy = doSomeMoreOperationsHere();
+  <span class="hljs-keyword">let</span> a = <span class="hljs-constructor">Foo</span>;
+  <span class="hljs-keyword">let</span> a = <span class="hljs-constructor">`Foo</span>;
+  <span class="hljs-keyword">let</span> a = <span class="hljs-constructor">`bar91</span>(<span class="hljs-number">1</span>);
+  (x, y)
+};
+
+<span class="hljs-keyword">type</span> profession = <span class="hljs-constructor">Teacher</span> | <span class="hljs-constructor">Director</span>;
+<span class="hljs-comment">/* test */</span>
+
+<span class="hljs-keyword">let</span> person1 = <span class="hljs-constructor">Teacher</span>;
+<span class="hljs-keyword">let</span> getProfession = (person) =&gt;
+  <span class="hljs-keyword">switch</span> (person) {
+  | <span class="hljs-literal">[|</span><span class="hljs-constructor">Teacher</span><span class="hljs-literal">|]</span> =&gt; <span class="hljs-string">"A teacher"</span>
+  | <span class="hljs-constructor">Director</span> =&gt; <span class="hljs-string">"A director"</span>
+  };
+
+<span class="hljs-keyword">open</span> <span class="hljs-module-identifier">Soup</span>;
+<span class="hljs-keyword">include</span> {<span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;};
+<span class="hljs-keyword">open</span> <span class="hljs-module-identifier">Belt</span>.<span class="hljs-module-identifier">Map</span>;
+<span class="hljs-keyword">include</span> <span class="hljs-module-identifier">Belt</span>.<span class="hljs-module-identifier">Map</span>.<span class="hljs-module-identifier">Make</span>();
+
+<span class="hljs-module-identifier">Foo</span>.<span class="hljs-constructor">Some</span>(<span class="hljs-constructor">Bar</span>);
+<span class="hljs-module-identifier">Foo</span>.<span class="hljs-constructor">Some</span>(<span class="hljs-constructor">Bar</span>());
+<span class="hljs-module-identifier">Foo</span>.make(<span class="hljs-constructor">Bar</span>());
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Bla</span> = <span class="hljs-module-identifier">Belt</span>.<span class="hljs-module-identifier">Map</span>.<span class="hljs-module-identifier">Make</span>(<span class="hljs-module-identifier">Bar</span>({<span class="hljs-keyword">type</span> t; <span class="hljs-keyword">let</span> a:b = <span class="hljs-string">"cc"</span>;}));
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span>: <span class="hljs-module-identifier">Foo</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>);
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>);
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>({<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Bar</span>;}));
+
+<span class="hljs-constructor">Foo</span>: bla;
+
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Nested</span> = (<span class="hljs-module-identifier">Foo</span>: {}) =&gt; {
+  <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = <span class="hljs-module-identifier">Bla</span>;
+};
+<span class="hljs-keyword">module</span> <span class="hljs-keyword">type</span> <span class="hljs-module-identifier">Bla</span> = {
+  <span class="hljs-keyword">include</span> (<span class="hljs-keyword">module</span> <span class="hljs-keyword">type</span> <span class="hljs-keyword">of</span> <span class="hljs-module-identifier">BaseComponent</span>);
+};
+<span class="hljs-comment">/* test */</span>
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">School</span> = {
+  <span class="hljs-keyword">type</span> profession = <span class="hljs-constructor">Teacher</span> | <span class="hljs-constructor">Director</span>;
+  <span class="hljs-comment">/* test */</span>
+
+  <span class="hljs-keyword">let</span> person1 = <span class="hljs-constructor">Teacher</span>;
+  <span class="hljs-keyword">let</span> getProfession = (person) =&gt;
+    <span class="hljs-keyword">switch</span> (person) {
+    | <span class="hljs-constructor">Teacher</span> =&gt; <span class="hljs-string">"A teacher"</span>
+    | <span class="hljs-constructor">Director</span> =&gt; <span class="hljs-string">"A director"</span>
+    };
+  <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Nested</span> = (
+    <span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>,
+    {
+      <span class="hljs-keyword">type</span> a = <span class="hljs-constructor">Bar</span>;
+      <span class="hljs-keyword">let</span> a = <span class="hljs-literal">[|</span><span class="hljs-string">"1"</span><span class="hljs-literal">|]</span>;
+    }
+  ) =&gt; {
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> =
+      <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = (<span class="hljs-module-identifier">Foo</span>: {}) =&gt; <span class="hljs-module-identifier">Bla</span>;
+  };
+  <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Nested2</span> = (
+    <span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>,
+    <span class="hljs-module-identifier">Bar</span>: <span class="hljs-module-identifier">Baz</span>,
+  ) =&gt; <span class="hljs-module-identifier">List</span>;
+  <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Nested</span> = (<span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>, {<span class="hljs-keyword">type</span> a = <span class="hljs-constructor">Bar</span>; <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>; } ) =&gt; {
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: <span class="hljs-module-identifier">Foo</span> = <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Bar</span>} = <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Bar</span>} = {
+      <span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Variant</span>;
+      <span class="hljs-keyword">let</span> a = <span class="hljs-literal">[</span><span class="hljs-string">"hello"</span><span class="hljs-literal">]</span>;
+    };
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = (<span class="hljs-module-identifier">Foo</span>: {<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Variant</span>;}) =&gt; <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: <span class="hljs-module-identifier">Bla</span> = (<span class="hljs-module-identifier">Foo</span>: {}) =&gt; <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Bar</span>; <span class="hljs-keyword">let</span> a: b = <span class="hljs-string">"cc"</span>; <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Foo</span> = {};} = (<span class="hljs-module-identifier">Foo</span>: {}) =&gt; <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-keyword">type</span> <span class="hljs-module-identifier">NestMore</span> = {}
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = () =&gt; <span class="hljs-module-identifier">Bla</span>.<span class="hljs-module-identifier">Qux</span>;
+  }
+};
+
+<span class="hljs-keyword">let</span> p: <span class="hljs-module-identifier">School</span>.<span class="hljs-module-identifier">School2</span>.profession = <span class="hljs-module-identifier">School</span>.getProfession(<span class="hljs-module-identifier">School</span>.<span class="hljs-constructor">Foo</span>);
+
+<span class="hljs-keyword">let</span> getAudience = (~excited) =&gt; excited ? <span class="hljs-string">"world!"</span> : <span class="hljs-string">"world"</span>;
+
+  </pre>
+</body>

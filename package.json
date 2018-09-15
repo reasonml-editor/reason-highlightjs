@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "Reason syntax highlighting for Highlight.js",
   "main": "index.js",
+  "files": ["index.js"],
   "scripts": {
-    "test": "echo 'Please test this manually, or submit a way to properly test this highlighter. Thanks!'"
+    "test": "node test/test.js"
   },
   "keywords": [
     "reason",
@@ -15,5 +16,8 @@
     "highlight.js"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "highlight.js": "^9.12.0"
+  }
 }

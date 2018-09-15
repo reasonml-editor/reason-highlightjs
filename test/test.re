@@ -1,7 +1,6 @@
-/* Some of these might not highlight correctly */
-"a";
+"aa";
 'a';
-[@bs.module hello] external foo: int = "bar";
+[@bs.module "foo"] external foo: int = "bar";
 
 let bla = 1.;
 
@@ -15,14 +14,12 @@ type bla('a) = {
 
 let getCenterCoordinates = (aBla, doHello, ~b=1, ~c, ()) => {
   let x = doSomeOperationsHere("a");
-  let y = doSomeMoreOperationsHere();
+  let yy = doSomeMoreOperationsHere();
   let a = Foo;
   let a = `Foo;
   let a = `bar91(1);
   (x, y)
 };
-
-Foo: bla;
 
 type profession = Teacher | Director;
 /* test */
@@ -33,9 +30,28 @@ let getProfession = (person) =>
   | [|Teacher|] => "A teacher"
   | Director => "A director"
   };
+
+open Soup;
+include {let a = 1;};
+open Belt.Map;
+include Belt.Map.Make();
+
+Foo.Some(Bar);
+Foo.Some(Bar());
+Foo.make(Bar());
+module Bla = Belt.Map.Make(Bar({type t; let a:b = "cc";}));
+module SetOfIntPairs: Foo = MakeSet(IntPair);
+module SetOfIntPairs = MakeSet(IntPair);
+module SetOfIntPairs = MakeSet(IntPair({type t = Bar;}));
+
+Foo: bla;
+
 module Nested = (Foo: {}) => {
   module NestMore = Bla;
-}
+};
+module type Bla = {
+  include (module type of BaseComponent);
+};
 /* test */
 module School = {
   type profession = Teacher | Director;
@@ -60,25 +76,24 @@ module School = {
   };
   module Nested2 = (
     Foo: Bar,
+    Bar: Baz,
   ) => List;
   module Nested = (Foo: Bar, {type a = Bar; let a = 1; } ) => {
     module NestMore = Bla;
     module NestMore: Foo = Bla;
     module NestMore: {type t = Bar} = Bla;
     module NestMore: {type t = Bar} = {
-      type t = Variant
+      type t = Variant;
+      let a = ["hello"];
     };
-    module NestMore = (Foo: {}) => Bla;
+    module NestMore = (Foo: {type t = Variant;}) => Bla;
     module NestMore: Bla = (Foo: {}) => Bla;
-    module NestMore: {type t = Bar} = (Foo: {}) => Bla;
+    module NestMore: {type t = Bar; let a: b = "cc"; module Foo = {};} = (Foo: {}) => Bla;
     module type NestMore = {}
+    module NestMore = () => Bla.Qux;
   }
 };
 
 let p: School.School2.profession = School.getProfession(School.Foo);
 
 let getAudience = (~excited) => excited ? "world!" : "world";
-Foo.Make(Bar);
-Foo.Make(Bar());
-Foo.make(Bar());
-Foo.Make(Bar({type t;}));
