@@ -1,8 +1,12 @@
 "aa";
 'a';
 [@bs.module "foo"] external foo: int = "bar";
+let add = [%bs.raw "a + b"];
+[%%%raw "a + b"];
 
-let bla = 1.;
+let foo = 1.;
+let recordAccess = fooRecord.myName;
+let recordAccessWithScope = fooRecord.ReasonReact.myName;
 
 let [1, 2.2] = foo();
 let [|c, [|a, [1], c|], 2.2|] = [|c, 1, "d", 'a', 1+2|];

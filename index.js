@@ -35,10 +35,10 @@ module.exports = function(hljs) {
       'esfun function functor include inherit initializer lazy let pub mutable new nonrec ' +
       'object of open or pri rec then to type val virtual ' +
       'try catch finally do else for if switch while import library export ' +
-      'part of show hide is as ' +
       'module in raise',
-    built_in:
-      'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit',
+    // not reliable
+    // built_in:
+    //   'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit',
     literal:
       'true false'
   };
@@ -123,7 +123,7 @@ module.exports = function(hljs) {
   };
 
   const MODULE_ACCESS_MODE = {
-    begin: RE_MODULE_IDENT + "\\.",
+    begin: "\\b" + RE_MODULE_IDENT + "\\.",
     returnBegin: true,
     contains: [
       {
@@ -187,11 +187,42 @@ module.exports = function(hljs) {
   };
   const ATTRIBUTE_MODE = {
     className: 'attribute',
-    begin: "\\[@",
-    end: "\\s*\\]",
-    contains: [
+    variants: [
       {
-        begin: RE_ATTRIBUTE + "\\s*",
+        begin: "\\[@",
+        end: "\\s*\\]",
+        contains: [
+          {
+            begin: RE_ATTRIBUTE + "\\s*",
+          },
+        ],
+      },
+      {
+        begin: "\\[%",
+        end: "\\s*\\]",
+        contains: [
+          {
+            begin: RE_ATTRIBUTE + "\\s*",
+          },
+        ],
+      },
+      {
+        begin: "\\[%%",
+        end: "\\s*\\]",
+        contains: [
+          {
+            begin: RE_ATTRIBUTE + "\\s*",
+          },
+        ],
+      },
+      {
+        begin: "\\[%%%",
+        end: "\\s*\\]",
+        contains: [
+          {
+            begin: RE_ATTRIBUTE + "\\s*",
+          },
+        ],
       },
     ]
   };

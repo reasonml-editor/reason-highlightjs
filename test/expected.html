@@ -20,15 +20,19 @@
   <pre class="hljs">
 <span class="hljs-string">"aa"</span>;
 <span class="hljs-character">'a'</span>;
-<span class="hljs-attribute">[@bs.module "foo"]</span> <span class="hljs-keyword">external</span> foo: <span class="hljs-built_in">int</span> = <span class="hljs-string">"bar"</span>;
+<span class="hljs-attribute">[@bs.module "foo"]</span> <span class="hljs-keyword">external</span> foo: int = <span class="hljs-string">"bar"</span>;
+<span class="hljs-keyword">let</span> add = <span class="hljs-attribute">[%bs.raw "a + b"]</span>;
+<span class="hljs-attribute">[%%%raw "a + b"]</span>;
 
-<span class="hljs-keyword">let</span> bla = <span class="hljs-number">1.</span>;
+<span class="hljs-keyword">let</span> foo = <span class="hljs-number">1.</span>;
+<span class="hljs-keyword">let</span> recordAccess = fooRecord.myName;
+<span class="hljs-keyword">let</span> recordAccessWithScope = fooRecord.<span class="hljs-module-identifier">ReasonReact</span>.myName;
 
 <span class="hljs-keyword">let</span> <span class="hljs-literal">[</span><span class="hljs-number">1</span>, <span class="hljs-number">2.2</span><span class="hljs-literal">]</span> = foo();
 <span class="hljs-keyword">let</span> <span class="hljs-literal">[|</span>c, <span class="hljs-literal">[|</span>a, <span class="hljs-literal">[</span><span class="hljs-number">1</span><span class="hljs-literal">]</span>, c<span class="hljs-literal">|]</span>, <span class="hljs-number">2.2</span><span class="hljs-literal">|]</span> = <span class="hljs-literal">[|</span>c, <span class="hljs-number">1</span>, <span class="hljs-string">"d"</span>, <span class="hljs-character">'a'</span>, <span class="hljs-number">1</span><span class="hljs-operator">+</span><span class="hljs-number">2</span><span class="hljs-literal">|]</span>;
 
 <span class="hljs-keyword">type</span> bla('a) = {
-  a: <span class="hljs-built_in">int</span>,
+  a: int,
   ok: 'a
 };
 
