@@ -4,6 +4,8 @@
 let add = [%bs.raw "a + b"];
 [%%%raw "a + b"];
 
+exception Hello;
+
 let foo = 1.;
 let recordAccess = fooRecord.myName;
 let recordAccessWithScope = fooRecord.ReasonReact.myName;
