@@ -244,7 +244,6 @@ module.exports = function(hljs) {
       hljs.COMMENT('/\\*', '\\*/', { illegal: '^(\\#,\\/\\/)' }),
       // there's also a block mode technically, but for our purpose, a module {}
       // and a block {} can be considered the same for highlighting
-      'self',
       CHARACTER_MODE,
       STRING_MODE,
       ATTRIBUTE_MODE,
