@@ -115,3 +115,11 @@ module School = {
 let p: School.School2.profession = School.getProfession(School.Foo);
 
 let getAudience = (~excited) => excited ? "world!" : "world";
+
+// Invalid tests
+let \"a b" = c
+let bla = list[1, 2]
+let nope = `hi`
+let nope2 = j`hi`
+let variant = #foo
+type a = option<bar>

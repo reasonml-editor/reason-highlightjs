@@ -17,14 +17,13 @@ module.exports = function(hljs) {
     .join('|');
   }
 
-  // eh why is the $ here
-  var RE_IDENT = '~?[a-z$_][0-9a-zA-Z$_]*';
+  var RE_IDENT = '~?[a-z_][0-9a-zA-Z_]*';
   var RE_ATTRIBUTE = '[A-Za-z_][A-Za-z0-9_\\.]*';
-  var RE_MODULE_IDENT = '[A-Z$_][0-9a-zA-Z$_]*';
-  var RE_CONSTRUCTOR = '([A-Z][0-9a-zA-Z$_]*)|(`[a-zA-Z][0-9a-zA-Z$_]*)';
+  var RE_MODULE_IDENT = '[A-Z_][0-9a-zA-Z_]*';
+  var RE_CONSTRUCTOR = '([A-Z][0-9a-zA-Z_]*)|(`[a-zA-Z][0-9a-zA-Z_]*)|(#[a-zA-Z][0-9a-zA-Z_]*)';
 
-  var RE_PARAM_TYPEPARAM = '\'?[a-z$_][0-9a-z$_]*';
-  var RE_PARAM_TYPE = '\s*:\s*[a-z$_][0-9a-z$_]*(\(\s*(' + RE_PARAM_TYPEPARAM + '\s*(,' + RE_PARAM_TYPEPARAM + ')*)?\s*\))?';
+  var RE_PARAM_TYPEPARAM = '\'?[a-z_][0-9a-z_]*';
+  var RE_PARAM_TYPE = '\s*:\s*[a-z_][0-9a-z_]*(\(\s*(' + RE_PARAM_TYPEPARAM + '\s*(,' + RE_PARAM_TYPEPARAM + ')*)?\s*\))?';
   var RE_PARAM = RE_IDENT + '(' + RE_PARAM_TYPE + ')?(' + RE_PARAM_TYPE + ')?';
   var RE_OPERATOR = "(" + orReValues(['->', '||', '&&', '++', '**', '+.', '+', '-.', '-', '*.', '*', '/.', '/', '...', '|>', '===', '==', '^', ':=', '!']) + ")";
 
@@ -35,7 +34,10 @@ module.exports = function(hljs) {
       'esfun function functor include inherit initializer lazy let pub mutable new nonrec ' +
       'object of open or pri rec then to type val virtual ' +
       'try catch finally do else for if switch while import library export ' +
-      'module in raise',
+      'module in raise ' +
+      // invalid
+      'list private',
+
     // not reliable
     // built_in:
     //   'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit',
@@ -61,6 +63,10 @@ module.exports = function(hljs) {
         begin: '\\{(' + RE_IDENT + ')?\\|',
         end: '\\|(' + RE_IDENT + ')?\\}',
       },
+      // {
+      //   begin: '(' + RE_IDENT + ')?`',
+      //   end: '`',
+      // },
     ]
   };
 
@@ -241,7 +247,8 @@ module.exports = function(hljs) {
     keywords: KEYWORDS,
     // most of the order here is important
     contains: [
-      hljs.COMMENT('/\\*', '\\*/', { illegal: '^(\\#,\\/\\/)' }),
+      hljs.C_LINE_COMMENT_MODE,
+      hljs.C_BLOCK_COMMENT_MODE,
       // there's also a block mode technically, but for our purpose, a module {}
       // and a block {} can be considered the same for highlighting
       CHARACTER_MODE,
