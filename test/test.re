@@ -123,3 +123,21 @@ let nope = `hi`
 let nope2 = j`hi`
 let variant = #foo
 type a = option<bar>
+
+@foo(bar) let a = 1
+@foo (bar) let a = 1
+@foo(@bar(baz)) let a = 1
+@foo let a = 1
+@@foo let a = 1
+@@foo(bar) let a = 1
+%foo(bar)-2
+%foo (bar)-2
+%foo-1
+%%foo let a = 1
+%%foo(bar) let a = 1
+%%foo (bar) let a = 1
+
+let asd = ["bar"]
+let asd = list["bar"]
+let asd = foo["bar"]
+foo["bar"] = baz

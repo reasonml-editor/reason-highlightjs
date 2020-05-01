@@ -120,10 +120,27 @@ module.exports = function(hljs) {
     className: 'literal',
     variants: [
       {
+        begin: 'list\\[',
+      },
+      {
         begin: '\\[',
       },
       {
         begin: '\\]',
+      },
+    ]
+  };
+
+  const OBJECT_ACCESS_MODE = {
+    className: 'object-access',
+    variants: [
+      {
+        begin: RE_IDENT + '\\[',
+        end: '\\]',
+        contains: [
+          // hljs.BACKSLASH_ESCAPE
+          STRING_MODE
+        ],
       },
     ]
   };
@@ -194,6 +211,21 @@ module.exports = function(hljs) {
   const ATTRIBUTE_MODE = {
     className: 'attribute',
     variants: [
+      // order matters here
+      {
+        begin: "@@?(" + RE_ATTRIBUTE + ') *\\(',
+        end: '\\s*\\)',
+      },
+      {
+        begin: "@@?(" + RE_ATTRIBUTE + ')',
+      },
+      {
+        begin: "%%?(" + RE_ATTRIBUTE + ')\\(',
+        end: '\\s*\\)',
+      },
+      {
+        begin: "%%?(" + RE_ATTRIBUTE + ')',
+      },
       {
         begin: "\\[@",
         end: "\\s*\\]",
@@ -262,6 +294,7 @@ module.exports = function(hljs) {
       OPEN_OR_INCLUDE_MODULE_MODE,
       MODULE_ACCESS_MODE,
       CONSTRUCTOR_MODE,
+      OBJECT_ACCESS_MODE,
     ]
   };
   const MODULE_DECLARATION_MODE = {
