@@ -25,7 +25,6 @@ module.exports = function(hljs) {
   var RE_PARAM_TYPEPARAM = '\'?[a-z_][0-9a-z_]*';
   var RE_PARAM_TYPE = '\s*:\s*[a-z_][0-9a-z_]*(\(\s*(' + RE_PARAM_TYPEPARAM + '\s*(,' + RE_PARAM_TYPEPARAM + ')*)?\s*\))?';
   var RE_PARAM = RE_IDENT + '(' + RE_PARAM_TYPE + ')?(' + RE_PARAM_TYPE + ')?';
-  var RE_OPERATOR = "(" + orReValues(['->', '||', '&&', '++', '**', '+.', '+', '-.', '-', '*.', '*', '/.', '/', '...', '|>', '===', '==', '^', ':=', '!']) + ")";
 
   var KEYWORDS = {
     /* https://github.com/facebook/reason/blob/79e67d5334ef181fdb54bd57bd9e7729f9fe46e7/src/reason-parser/reason_lexer.mll#L94-L154 */
@@ -44,11 +43,6 @@ module.exports = function(hljs) {
     literal:
       'true false'
   };
-
-  const RE_NUMBER = '\\b(0[xX][a-fA-F0-9_]+[Lln]?|' +
-    '0[oO][0-7_]+[Lln]?|' +
-    '0[bB][01_]+[Lln]?|' +
-    '[0-9][0-9_]*([Lln]|(\\.[0-9_]*)?([eE][-+]?[0-9_]+)?)?)';
 
   const STRING_MODE = {
     className: 'string',
@@ -79,20 +73,18 @@ module.exports = function(hljs) {
   const NUMBER_MODE = {
     className: 'number',
     relevance: 0,
-    variants: [
-      {
-        begin: RE_NUMBER
-      },
-      {
-        begin: '\\(\\-' + RE_NUMBER + '\\)'
-      }
-    ]
+    begin: '\\b(0[xX][a-fA-F0-9_]+[Lln]?|' +
+      '0[oO][0-7_]+[Lln]?|' +
+      '0[bB][01_]+[Lln]?|' +
+      '[0-9][0-9_]*([Lln]|(\\.[0-9_]+)?([eE][-+]?[0-9_]+)?)?)\\b'
   };
 
   const OPERATOR_MODE = {
     className: 'operator',
     relevance: 0,
-    begin: RE_OPERATOR
+    begin: "("+ orReValues([
+      '->', '||', '&&', '++', '**', '+.', '+', '-.', '-', '*.', '*', '/.', '/', '...', '|>', '===', '==', '^', ':=', '!'
+    ]) + ")"
   };
 
   // as in variant constructor

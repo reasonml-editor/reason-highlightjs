@@ -7,7 +7,21 @@ let add = [%bs.raw "a + b"];
 
 exception Hello;
 
-let foo = 1.;
+let a = -.0.1;
+let a = 0b1;
+let a = 0o73;
+let a = 0xff;
+let a = 0Xff;
+let a = +1_000_000.12;
+let a = 1E3;
+// bad
+let a = 0bf;
+let a = 0o58;
+let a = 0xfz;
+let a = -.1;
+let a = 1.;
+let a = .2;
+
 let bar = true;
 let recordAccess = fooRecord.myName;
 let recordAccessWithScope = fooRecord.ReasonReact.myName;
