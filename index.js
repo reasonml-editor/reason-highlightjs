@@ -20,7 +20,6 @@ module.exports = function(hljs) {
   var RE_IDENT = '~?[a-z_][0-9a-zA-Z_]*';
   var RE_ATTRIBUTE = '[A-Za-z_][A-Za-z0-9_\\.]*';
   var RE_MODULE_IDENT = '[A-Z_][0-9a-zA-Z_]*';
-  var RE_CONSTRUCTOR = '([A-Z][0-9a-zA-Z_]*)|(`[a-zA-Z][0-9a-zA-Z_]*)|(#[a-zA-Z][0-9a-zA-Z_]*)';
 
   var RE_PARAM_TYPEPARAM = '\'?[a-z_][0-9a-z_]*';
   var RE_PARAM_TYPE = '\s*:\s*[a-z_][0-9a-z_]*(\(\s*(' + RE_PARAM_TYPEPARAM + '\s*(,' + RE_PARAM_TYPEPARAM + ')*)?\s*\))?';
@@ -90,8 +89,7 @@ module.exports = function(hljs) {
   // as in variant constructor
   const CONSTRUCTOR_MODE = {
     className: 'constructor',
-    begin: '\\b' + RE_CONSTRUCTOR,
-    illegal: '\\n',
+    begin: '\\b([A-Z][0-9a-zA-Z_]*)|(`[a-zA-Z][0-9a-zA-Z_]*)|(#[a-zA-Z][0-9a-zA-Z_]*)\\b',
   };
 
   const ARRAY_MODES = {
