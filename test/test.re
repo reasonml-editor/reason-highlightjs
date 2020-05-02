@@ -8,6 +8,7 @@ let add = [%bs.raw "a + b"];
 exception Hello;
 
 let foo = 1.;
+let bar = true;
 let recordAccess = fooRecord.myName;
 let recordAccessWithScope = fooRecord.ReasonReact.myName;
 
