@@ -1,5 +1,6 @@
 "aa";
 'a';
+'ab';
 [@bs.module "foo"] external foo: int = "bar";
 let add = [%bs.raw "a + b"];
 [%%%raw "a + b"];

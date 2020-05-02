@@ -31,7 +31,7 @@ module.exports = function(hljs) {
     /* https://github.com/facebook/reason/blob/79e67d5334ef181fdb54bd57bd9e7729f9fe46e7/src/reason-parser/reason_lexer.mll#L94-L154 */
     keyword:
       'and as assert begin class constraint done downto exception external fun ' +
-      'esfun function functor include inherit initializer lazy let pub mutable new nonrec ' +
+      'functor include inherit lazy let pub mutable new nonrec ' +
       'object of open or pri rec then to type val virtual ' +
       'try catch finally do else for if switch while import library export ' +
       'module in raise ' +
@@ -72,8 +72,7 @@ module.exports = function(hljs) {
 
   const CHARACTER_MODE = {
     className: 'character',
-    begin: '\'(\\\\[^\']+|[^\'])\'',
-    illegal: '\\n',
+    begin: '\'[\\x00-\\x7F]\'',
     relevance: 0
   };
 
