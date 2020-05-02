@@ -36,7 +36,7 @@ module.exports = function(hljs) {
       'try catch finally do else for if switch while import library export ' +
       'module in raise ' +
       // invalid
-      'list private',
+      'private',
 
     // not reliable
     // built_in:
