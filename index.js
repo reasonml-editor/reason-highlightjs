@@ -63,6 +63,11 @@ module.exports = function(hljs) {
     ]
   };
 
+  const FUNCTION_MODE = {
+    className: 'function',
+    begin: '=>',
+  };
+
   const CHARACTER_MODE = {
     className: 'character',
     begin: '\'[\\x00-\\x7F]\'',
@@ -82,7 +87,9 @@ module.exports = function(hljs) {
     className: 'operator',
     relevance: 0,
     begin: "("+ orReValues([
-      '->', '||', '&&', '++', '**', '+.', '+', '-.', '-', '*.', '*', '/.', '/', '...', '|>', '===', '==', '^', ':=', '!'
+      '->', '||', '&&', '++', '**', '+.', '+', '-.', '-',
+      '*.', '*', '/.', '/', '...', '|>', '===', '==', '^',
+      ':=', '!', '>=', '<=',
     ]) + ")"
   };
 
@@ -273,6 +280,7 @@ module.exports = function(hljs) {
       // and a block {} can be considered the same for highlighting
       CHARACTER_MODE,
       STRING_MODE,
+      FUNCTION_MODE,
       ATTRIBUTE_MODE,
       ARRAY_MODES,
       LIST_MODES,
