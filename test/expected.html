@@ -21,82 +21,82 @@
 <span class="hljs-string">"aa"</span>;
 <span class="hljs-character">'a'</span>;
 'ab';
-<span class="hljs-attribute">[@bs.module "foo"]</span> <span class="hljs-keyword">external</span> foo: int = <span class="hljs-string">"bar"</span>;
-<span class="hljs-keyword">let</span> add = <span class="hljs-attribute">[%bs.raw "a + b"]</span>;
+<span class="hljs-attribute">[@bs.module "foo"]</span> <span class="hljs-keyword">external</span> foo: int <span class="hljs-operator">=</span> <span class="hljs-string">"bar"</span>;
+<span class="hljs-keyword">let</span> add <span class="hljs-operator">=</span> <span class="hljs-attribute">[%bs.raw "a + b"]</span>;
 <span class="hljs-attribute">[%%%raw "a + b"]</span>;
 
 <span class="hljs-keyword">exception</span> <span class="hljs-constructor">Hello</span>;
 
-<span class="hljs-keyword">let</span> a = <span class="hljs-operator">-.</span><span class="hljs-number">0.1</span>;
-<span class="hljs-keyword">let</span> a = <span class="hljs-number">0b1</span>;
-<span class="hljs-keyword">let</span> a = <span class="hljs-number">0o73</span>;
-<span class="hljs-keyword">let</span> a = <span class="hljs-number">0xff</span>;
-<span class="hljs-keyword">let</span> a = <span class="hljs-number">0Xff</span>;
-<span class="hljs-keyword">let</span> a = <span class="hljs-operator">+</span><span class="hljs-number">1_000_000.12</span>;
-<span class="hljs-keyword">let</span> a = <span class="hljs-number">1E3</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-operator">-.</span><span class="hljs-number">0.1</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">0b1</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">0o73</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">0xff</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">0Xff</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-operator">+</span><span class="hljs-number">1_000_000.12</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1E3</span>;
 <span class="hljs-comment">// bad</span>
-<span class="hljs-keyword">let</span> a = 0bf;
-<span class="hljs-keyword">let</span> a = 0o58;
-<span class="hljs-keyword">let</span> a = 0xfz;
-<span class="hljs-keyword">let</span> a = <span class="hljs-operator">-.</span><span class="hljs-number">1</span>;
-<span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>.;
-<span class="hljs-keyword">let</span> a = .<span class="hljs-number">2</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> 0bf;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> 0o58;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> 0xfz;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-operator">-.</span><span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>.;
+<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> .<span class="hljs-number">2</span>;
 
-<span class="hljs-keyword">let</span> bar = <span class="hljs-literal">true</span>;
-<span class="hljs-keyword">let</span> recordAccess = fooRecord.myName;
-<span class="hljs-keyword">let</span> recordAccessWithScope = fooRecord.<span class="hljs-module-identifier">ReasonReact</span>.myName;
+<span class="hljs-keyword">let</span> bar <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">let</span> recordAccess <span class="hljs-operator">=</span> fooRecord.myName;
+<span class="hljs-keyword">let</span> recordAccessWithScope <span class="hljs-operator">=</span> fooRecord.<span class="hljs-module-identifier">ReasonReact</span>.myName;
 
-<span class="hljs-keyword">let</span> <span class="hljs-literal">[</span><span class="hljs-number">1</span>, <span class="hljs-number">2.2</span><span class="hljs-literal">]</span> = foo();
-<span class="hljs-keyword">let</span> <span class="hljs-literal">[|</span>c, <span class="hljs-literal">[|</span>a, <span class="hljs-literal">[</span><span class="hljs-number">1</span><span class="hljs-literal">]</span>, c<span class="hljs-literal">|]</span>, <span class="hljs-number">2.2</span><span class="hljs-literal">|]</span> = <span class="hljs-literal">[|</span>c, <span class="hljs-number">1</span>, <span class="hljs-string">"d"</span>, <span class="hljs-character">'a'</span>, <span class="hljs-number">1</span><span class="hljs-operator">+</span><span class="hljs-number">2</span><span class="hljs-literal">|]</span>;
+<span class="hljs-keyword">let</span> <span class="hljs-literal">[</span><span class="hljs-number">1</span>, <span class="hljs-number">2.2</span><span class="hljs-literal">]</span> <span class="hljs-operator">=</span> foo();
+<span class="hljs-keyword">let</span> <span class="hljs-literal">[|</span>c, <span class="hljs-literal">[|</span>a, <span class="hljs-literal">[</span><span class="hljs-number">1</span><span class="hljs-literal">]</span>, c<span class="hljs-literal">|]</span>, <span class="hljs-number">2.2</span><span class="hljs-literal">|]</span> <span class="hljs-operator">=</span> <span class="hljs-literal">[|</span>c, <span class="hljs-number">1</span>, <span class="hljs-string">"d"</span>, <span class="hljs-character">'a'</span>, <span class="hljs-number">1</span><span class="hljs-operator">+</span><span class="hljs-number">2</span><span class="hljs-literal">|]</span>;
 
-<span class="hljs-keyword">type</span> bla('a) = {
+<span class="hljs-keyword">type</span> bla('a) <span class="hljs-operator">=</span> {
   a: int,
   ok: 'a
 };
 
-<span class="hljs-keyword">let</span> getItem = (theList) <span class="hljs-function">=&gt;</span>
+<span class="hljs-keyword">let</span> getItem <span class="hljs-operator">=</span> (theList) <span class="hljs-function">=&gt;</span>
   <span class="hljs-keyword">if</span> (callSomeFunctionThatThrows()) {
     <span class="hljs-comment">/* return the found item here */</span>
   } <span class="hljs-keyword">else</span> {
     <span class="hljs-keyword">raise</span>(<span class="hljs-constructor">Not_found</span>)
   };
 
-<span class="hljs-keyword">let</span> result =
+<span class="hljs-keyword">let</span> result <span class="hljs-operator">=</span>
   <span class="hljs-keyword">try</span> (getItem(<span class="hljs-literal">[</span><span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span><span class="hljs-literal">]</span>)) {
   | <span class="hljs-constructor">Not_found</span> <span class="hljs-function">=&gt;</span> <span class="hljs-number">0</span> <span class="hljs-comment">/* Default value if getItem throws */</span>
   };
 
-<span class="hljs-keyword">let</span> getCenterCoordinates = (aBla, doHello, ~b=<span class="hljs-number">1</span>, ~c, ()) <span class="hljs-function">=&gt;</span> {
-  <span class="hljs-keyword">let</span> x = doSomeOperationsHere(<span class="hljs-string">"a"</span>);
-  <span class="hljs-keyword">let</span> yy = doSomeMoreOperationsHere();
-  <span class="hljs-keyword">let</span> a = <span class="hljs-constructor">Foo</span>;
-  <span class="hljs-keyword">let</span> a = <span class="hljs-constructor">`Foo</span>;
-  <span class="hljs-keyword">let</span> a = <span class="hljs-constructor">`bar91</span>(<span class="hljs-number">1</span>);
+<span class="hljs-keyword">let</span> getCenterCoordinates <span class="hljs-operator">=</span> (aBla, doHello, ~b<span class="hljs-operator">=</span><span class="hljs-number">1</span>, ~c, ()) <span class="hljs-function">=&gt;</span> {
+  <span class="hljs-keyword">let</span> x <span class="hljs-operator">=</span> doSomeOperationsHere(<span class="hljs-string">"a"</span>);
+  <span class="hljs-keyword">let</span> yy <span class="hljs-operator">=</span> doSomeMoreOperationsHere();
+  <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-constructor">Foo</span>;
+  <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-constructor">`Foo</span>;
+  <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-constructor">`bar91</span>(<span class="hljs-number">1</span>);
   (x, y)
 };
 
-<span class="hljs-keyword">type</span> profession = <span class="hljs-constructor">Teacher</span> | <span class="hljs-constructor">Director</span>;
+<span class="hljs-keyword">type</span> profession <span class="hljs-operator">=</span> <span class="hljs-constructor">Teacher</span> | <span class="hljs-constructor">Director</span>;
 <span class="hljs-comment">/* test */</span>
 
-<span class="hljs-keyword">let</span> person1 = <span class="hljs-constructor">Teacher</span>;
-<span class="hljs-keyword">let</span> getProfession = (person) <span class="hljs-function">=&gt;</span>
+<span class="hljs-keyword">let</span> person1 <span class="hljs-operator">=</span> <span class="hljs-constructor">Teacher</span>;
+<span class="hljs-keyword">let</span> getProfession <span class="hljs-operator">=</span> (person) <span class="hljs-function">=&gt;</span>
   <span class="hljs-keyword">switch</span> (person) {
   | <span class="hljs-literal">[|</span><span class="hljs-constructor">Teacher</span><span class="hljs-literal">|]</span> <span class="hljs-function">=&gt;</span> <span class="hljs-string">"A teacher"</span>
   | <span class="hljs-constructor">Director</span> <span class="hljs-function">=&gt;</span> <span class="hljs-string">"A director"</span>
   };
 
 <span class="hljs-keyword">open</span> <span class="hljs-module-identifier">Soup</span>;
-<span class="hljs-keyword">include</span> {<span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;};
+<span class="hljs-keyword">include</span> {<span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;};
 <span class="hljs-keyword">open</span> <span class="hljs-module-identifier">Belt</span>.<span class="hljs-module-identifier">Map</span>;
 <span class="hljs-keyword">include</span> <span class="hljs-module-identifier">Belt</span>.<span class="hljs-module-identifier">Map</span>.<span class="hljs-module-identifier">Make</span>();
 
 <span class="hljs-module-identifier">Foo</span>.<span class="hljs-constructor">Some</span>(<span class="hljs-constructor">Bar</span>);
 <span class="hljs-module-identifier">Foo</span>.<span class="hljs-constructor">Some</span>(<span class="hljs-constructor">Bar</span>());
 <span class="hljs-module-identifier">Foo</span>.make(<span class="hljs-constructor">Bar</span>());
-<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Bla</span> = <span class="hljs-module-identifier">Belt</span>.<span class="hljs-module-identifier">Map</span>.<span class="hljs-module-identifier">Make</span>(<span class="hljs-module-identifier">Bar</span>({<span class="hljs-keyword">type</span> t; <span class="hljs-keyword">let</span> a:b = <span class="hljs-string">"cc"</span>;}));
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Bla</span> = <span class="hljs-module-identifier">Belt</span>.<span class="hljs-module-identifier">Map</span>.<span class="hljs-module-identifier">Make</span>(<span class="hljs-module-identifier">Bar</span>({<span class="hljs-keyword">type</span> t; <span class="hljs-keyword">let</span> a:b <span class="hljs-operator">=</span> <span class="hljs-string">"cc"</span>;}));
 <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span>: <span class="hljs-module-identifier">Foo</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>);
 <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>);
-<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>({<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Bar</span>;}));
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>({<span class="hljs-keyword">type</span> t <span class="hljs-operator">=</span> <span class="hljs-constructor">Bar</span>;}));
 
 <span class="hljs-constructor">Foo</span>: bla;
 
@@ -108,11 +108,11 @@
 };
 <span class="hljs-comment">/* test */</span>
 <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">School</span> = {
-  <span class="hljs-keyword">type</span> profession = <span class="hljs-constructor">Teacher</span> | <span class="hljs-constructor">Director</span>;
+  <span class="hljs-keyword">type</span> profession <span class="hljs-operator">=</span> <span class="hljs-constructor">Teacher</span> | <span class="hljs-constructor">Director</span>;
   <span class="hljs-comment">/* test */</span>
 
-  <span class="hljs-keyword">let</span> person1 = <span class="hljs-constructor">Teacher</span>;
-  <span class="hljs-keyword">let</span> getProfession = (person) <span class="hljs-function">=&gt;</span>
+  <span class="hljs-keyword">let</span> person1 <span class="hljs-operator">=</span> <span class="hljs-constructor">Teacher</span>;
+  <span class="hljs-keyword">let</span> getProfession <span class="hljs-operator">=</span> (person) <span class="hljs-function">=&gt;</span>
     <span class="hljs-keyword">switch</span> (person) {
     | <span class="hljs-constructor">Teacher</span> <span class="hljs-function">=&gt;</span> <span class="hljs-string">"A teacher"</span>
     | <span class="hljs-constructor">Director</span> <span class="hljs-function">=&gt;</span> <span class="hljs-string">"A director"</span>
@@ -120,8 +120,8 @@
   <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Nested</span> = (
     <span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>,
     {
-      <span class="hljs-keyword">type</span> a = <span class="hljs-constructor">Bar</span>;
-      <span class="hljs-keyword">let</span> a = <span class="hljs-literal">[|</span><span class="hljs-string">"1"</span><span class="hljs-literal">|]</span>;
+      <span class="hljs-keyword">type</span> a <span class="hljs-operator">=</span> <span class="hljs-constructor">Bar</span>;
+      <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-literal">[|</span><span class="hljs-string">"1"</span><span class="hljs-literal">|]</span>;
     }
   ) =&gt; {
     <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> =
@@ -132,51 +132,51 @@
     <span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>,
     <span class="hljs-module-identifier">Bar</span>: <span class="hljs-module-identifier">Baz</span>,
   ) =&gt; <span class="hljs-module-identifier">List</span>;
-  <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Nested</span> = (<span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>, {<span class="hljs-keyword">type</span> a = <span class="hljs-constructor">Bar</span>; <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>; } ) =&gt; {
+  <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Nested</span> = (<span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>, {<span class="hljs-keyword">type</span> a <span class="hljs-operator">=</span> <span class="hljs-constructor">Bar</span>; <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; } ) =&gt; {
     <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = <span class="hljs-module-identifier">Bla</span>;
     <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: <span class="hljs-module-identifier">Foo</span> = <span class="hljs-module-identifier">Bla</span>;
-    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Bar</span>} = <span class="hljs-module-identifier">Bla</span>;
-    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Bar</span>} = {
-      <span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Variant</span>;
-      <span class="hljs-keyword">let</span> a = <span class="hljs-literal">[</span><span class="hljs-string">"hello"</span><span class="hljs-literal">]</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t <span class="hljs-operator">=</span> <span class="hljs-constructor">Bar</span>} = <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t <span class="hljs-operator">=</span> <span class="hljs-constructor">Bar</span>} = {
+      <span class="hljs-keyword">type</span> t <span class="hljs-operator">=</span> <span class="hljs-constructor">Variant</span>;
+      <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-literal">[</span><span class="hljs-string">"hello"</span><span class="hljs-literal">]</span>;
     };
-    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = (<span class="hljs-module-identifier">Foo</span>: {<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Variant</span>;}) =&gt; <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = (<span class="hljs-module-identifier">Foo</span>: {<span class="hljs-keyword">type</span> t <span class="hljs-operator">=</span> <span class="hljs-constructor">Variant</span>;}) =&gt; <span class="hljs-module-identifier">Bla</span>;
     <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: <span class="hljs-module-identifier">Bla</span> = (<span class="hljs-module-identifier">Foo</span>: {}) =&gt; <span class="hljs-module-identifier">Bla</span>;
-    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t = <span class="hljs-constructor">Bar</span>; <span class="hljs-keyword">let</span> a: b = <span class="hljs-string">"cc"</span>; <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Foo</span> = {};} = (<span class="hljs-module-identifier">Foo</span>: {}) =&gt; <span class="hljs-module-identifier">Bla</span>;
+    <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span>: {<span class="hljs-keyword">type</span> t <span class="hljs-operator">=</span> <span class="hljs-constructor">Bar</span>; <span class="hljs-keyword">let</span> a: b <span class="hljs-operator">=</span> <span class="hljs-string">"cc"</span>; <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Foo</span> = {};} = (<span class="hljs-module-identifier">Foo</span>: {}) =&gt; <span class="hljs-module-identifier">Bla</span>;
     <span class="hljs-keyword">module</span> <span class="hljs-keyword">type</span> <span class="hljs-module-identifier">NestMore</span> = {}
     <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">NestMore</span> = () =&gt; <span class="hljs-module-identifier">Bla</span>.<span class="hljs-module-identifier">Qux</span>;
   }
 };
 
-<span class="hljs-keyword">let</span> p: <span class="hljs-module-identifier">School</span>.<span class="hljs-module-identifier">School2</span>.profession = <span class="hljs-module-identifier">School</span>.getProfession(<span class="hljs-module-identifier">School</span>.<span class="hljs-constructor">Foo</span>);
+<span class="hljs-keyword">let</span> p: <span class="hljs-module-identifier">School</span>.<span class="hljs-module-identifier">School2</span>.profession <span class="hljs-operator">=</span> <span class="hljs-module-identifier">School</span>.getProfession(<span class="hljs-module-identifier">School</span>.<span class="hljs-constructor">Foo</span>);
 
-<span class="hljs-keyword">let</span> getAudience = (~excited) <span class="hljs-function">=&gt;</span> excited ? <span class="hljs-string">"world!"</span> : <span class="hljs-string">"world"</span>;
+<span class="hljs-keyword">let</span> getAudience <span class="hljs-operator">=</span> (~excited) <span class="hljs-function">=&gt;</span> excited ? <span class="hljs-string">"world!"</span> : <span class="hljs-string">"world"</span>;
 
 <span class="hljs-comment">// Invalid tests</span>
-<span class="hljs-keyword">let</span> \<span class="hljs-string">"a b"</span> = c
-<span class="hljs-keyword">let</span> bla = <span class="hljs-literal">list[</span><span class="hljs-number">1</span>, <span class="hljs-number">2</span><span class="hljs-literal">]</span>
-<span class="hljs-keyword">let</span> nope = <span class="hljs-constructor">`hi</span>`
-<span class="hljs-keyword">let</span> nope2 = j<span class="hljs-constructor">`hi</span>`
-<span class="hljs-keyword">let</span> variant = <span class="hljs-constructor">#foo</span>
-<span class="hljs-keyword">type</span> a = option&lt;bar&gt;
+<span class="hljs-keyword">let</span> \<span class="hljs-string">"a b"</span> <span class="hljs-operator">=</span> c
+<span class="hljs-keyword">let</span> bla <span class="hljs-operator">=</span> <span class="hljs-literal">list[</span><span class="hljs-number">1</span>, <span class="hljs-number">2</span><span class="hljs-literal">]</span>
+<span class="hljs-keyword">let</span> nope <span class="hljs-operator">=</span> <span class="hljs-constructor">`hi</span>`
+<span class="hljs-keyword">let</span> nope2 <span class="hljs-operator">=</span> j<span class="hljs-constructor">`hi</span>`
+<span class="hljs-keyword">let</span> variant <span class="hljs-operator">=</span> <span class="hljs-constructor">#foo</span>
+<span class="hljs-keyword">type</span> a <span class="hljs-operator">=</span> option&lt;bar&gt;
 
-<span class="hljs-attribute">@foo(bar)</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
-<span class="hljs-attribute">@foo (bar)</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
-<span class="hljs-attribute">@foo(@bar(baz)</span>) <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
-<span class="hljs-attribute">@foo</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
-<span class="hljs-attribute">@@foo</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
-<span class="hljs-attribute">@@foo(bar)</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
+<span class="hljs-attribute">@foo(bar)</span> <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
+<span class="hljs-attribute">@foo (bar)</span> <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
+<span class="hljs-attribute">@foo(@bar(baz)</span>) <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
+<span class="hljs-attribute">@foo</span> <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
+<span class="hljs-attribute">@@foo</span> <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
+<span class="hljs-attribute">@@foo(bar)</span> <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
 <span class="hljs-attribute">%foo(bar)</span><span class="hljs-operator">-</span><span class="hljs-number">2</span>
 <span class="hljs-attribute">%foo</span> (bar)<span class="hljs-operator">-</span><span class="hljs-number">2</span>
 <span class="hljs-attribute">%foo</span><span class="hljs-operator">-</span><span class="hljs-number">1</span>
-<span class="hljs-attribute">%%foo</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
-<span class="hljs-attribute">%%foo(bar)</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
-<span class="hljs-attribute">%%foo</span> (bar) <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>
+<span class="hljs-attribute">%%foo</span> <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
+<span class="hljs-attribute">%%foo(bar)</span> <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
+<span class="hljs-attribute">%%foo</span> (bar) <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-number">1</span>
 
-<span class="hljs-keyword">let</span> asd = <span class="hljs-literal">[</span><span class="hljs-string">"bar"</span><span class="hljs-literal">]</span>
-<span class="hljs-keyword">let</span> asd = <span class="hljs-literal">list[</span><span class="hljs-string">"bar"</span><span class="hljs-literal">]</span>
-<span class="hljs-keyword">let</span> asd = <span class="hljs-object-access">foo[<span class="hljs-string">"bar"</span>]</span>
-<span class="hljs-object-access">foo[<span class="hljs-string">"bar"</span>]</span> = baz
+<span class="hljs-keyword">let</span> asd <span class="hljs-operator">=</span> <span class="hljs-literal">[</span><span class="hljs-string">"bar"</span><span class="hljs-literal">]</span>
+<span class="hljs-keyword">let</span> asd <span class="hljs-operator">=</span> <span class="hljs-literal">list[</span><span class="hljs-string">"bar"</span><span class="hljs-literal">]</span>
+<span class="hljs-keyword">let</span> asd <span class="hljs-operator">=</span> <span class="hljs-object-access">foo[<span class="hljs-string">"bar"</span>]</span>
+<span class="hljs-object-access">foo[<span class="hljs-string">"bar"</span>]</span> <span class="hljs-operator">=</span> baz
 
   </pre>
 </body>

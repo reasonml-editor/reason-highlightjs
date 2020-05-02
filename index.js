@@ -93,6 +93,11 @@ module.exports = function(hljs) {
     ]) + ")"
   };
 
+  const ASSIGNMENT_MODE = {
+    className: 'operator',
+    begin: '='
+  };
+
   // as in variant constructor
   const CONSTRUCTOR_MODE = {
     className: 'constructor',
@@ -286,6 +291,7 @@ module.exports = function(hljs) {
       LIST_MODES,
       JSX_MODE,
       OPERATOR_MODE,
+      ASSIGNMENT_MODE,
       NUMBER_MODE,
       OPEN_OR_INCLUDE_MODULE_MODE,
       MODULE_ACCESS_MODE,
