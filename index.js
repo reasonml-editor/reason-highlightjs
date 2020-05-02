@@ -92,7 +92,6 @@ module.exports = function(hljs) {
     className: 'constructor',
     begin: '\\b' + RE_CONSTRUCTOR,
     illegal: '\\n',
-    keywords: KEYWORDS,
   };
 
   const ARRAY_MODES = {
