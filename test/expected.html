@@ -18,6 +18,9 @@
 </head>
 <body>
   <pre class="hljs">
+<span class="hljs-keyword">open</span> <span class="hljs-module-identifier">Foo</span>.<span class="hljs-module-identifier">Bar</span>.<span class="hljs-module-identifier">Baz</span>
+<span class="hljs-keyword">open</span> <span class="hljs-module-identifier">Foo</span>.<span class="hljs-module-identifier">Bar</span>.<span class="hljs-module-identifier">Baz</span>
+
 <span class="hljs-string">"aa"</span>;
 <span class="hljs-character">'a'</span>;
 'ab';
@@ -151,6 +154,13 @@
 <span class="hljs-keyword">let</span> p: <span class="hljs-module-identifier">School</span>.<span class="hljs-module-identifier">School2</span>.profession <span class="hljs-operator">=</span> <span class="hljs-module-identifier">School</span>.getProfession(<span class="hljs-module-identifier">School</span>.<span class="hljs-constructor">Foo</span>);
 
 <span class="hljs-keyword">let</span> getAudience <span class="hljs-operator">=</span> (~excited) <span class="hljs-function">=&gt;</span> excited ? <span class="hljs-string">"world!"</span> : <span class="hljs-string">"world"</span>;
+
+<span class="hljs-keyword">let</span> jsx <span class="hljs-operator">=</span> &lt;div className<span class="hljs-operator">=</span><span class="hljs-string">"foo"</span>&gt;
+  &lt;&gt;
+    hi
+  &lt;/&gt;
+  &lt;<span class="hljs-module-identifier">Comp</span> bar /&gt;
+&lt;/div&gt;
 
 <span class="hljs-comment">// Invalid tests</span>
 <span class="hljs-keyword">let</span> \<span class="hljs-string">"a b"</span> <span class="hljs-operator">=</span> c

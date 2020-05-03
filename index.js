@@ -208,6 +208,7 @@ module.exports = function(hljs) {
       },
     ]
   };
+
   const ATTRIBUTE_MODE = {
     className: 'attribute',
     variants: [

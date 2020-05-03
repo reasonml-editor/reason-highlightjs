@@ -1,3 +1,6 @@
+open Foo.Bar.Baz
+open Foo.Bar.Baz
+
 "aa";
 'a';
 'ab';
@@ -131,6 +134,13 @@ module School = {
 let p: School.School2.profession = School.getProfession(School.Foo);
 
 let getAudience = (~excited) => excited ? "world!" : "world";
+
+let jsx = <div className="foo">
+  <>
+    hi
+  </>
+  <Comp bar />
+</div>
 
 // Invalid tests
 let \"a b" = c
