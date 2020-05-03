@@ -97,7 +97,7 @@
 <span class="hljs-module-identifier">Foo</span>.<span class="hljs-constructor">Some</span>(<span class="hljs-constructor">Bar</span>());
 <span class="hljs-module-identifier">Foo</span>.make(<span class="hljs-constructor">Bar</span>());
 <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Bla</span> = <span class="hljs-module-identifier">Belt</span>.<span class="hljs-module-identifier">Map</span>.<span class="hljs-module-identifier">Make</span>(<span class="hljs-module-identifier">Bar</span>({<span class="hljs-keyword">type</span> t; <span class="hljs-keyword">let</span> a:b <span class="hljs-operator">=</span> <span class="hljs-string">"cc"</span>;}));
-<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span>: <span class="hljs-module-identifier">Foo</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>);
+<span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span>: <span class="hljs-module-identifier">Foo</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>.<span class="hljs-module-identifier">Pair</span>);
 <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>);
 <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">SetOfIntPairs</span> = <span class="hljs-module-identifier">MakeSet</span>(<span class="hljs-module-identifier">IntPair</span>({<span class="hljs-keyword">type</span> t <span class="hljs-operator">=</span> <span class="hljs-constructor">Bar</span>;}));
 
@@ -121,7 +121,7 @@
     | <span class="hljs-constructor">Director</span> <span class="hljs-function">=&gt;</span> <span class="hljs-string">"A director"</span>
     };
   <span class="hljs-keyword">module</span> <span class="hljs-module-identifier">Nested</span> = (
-    <span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>,
+    <span class="hljs-module-identifier">Foo</span>: <span class="hljs-module-identifier">Bar</span>.<span class="hljs-module-identifier">Baz</span>,
     {
       <span class="hljs-keyword">type</span> a <span class="hljs-operator">=</span> <span class="hljs-constructor">Bar</span>;
       <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-literal">[|</span><span class="hljs-string">"1"</span><span class="hljs-literal">|]</span>;

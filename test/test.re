@@ -77,7 +77,7 @@ Foo.Some(Bar);
 Foo.Some(Bar());
 Foo.make(Bar());
 module Bla = Belt.Map.Make(Bar({type t; let a:b = "cc";}));
-module SetOfIntPairs: Foo = MakeSet(IntPair);
+module SetOfIntPairs: Foo = MakeSet(IntPair.Pair);
 module SetOfIntPairs = MakeSet(IntPair);
 module SetOfIntPairs = MakeSet(IntPair({type t = Bar;}));
 
@@ -101,7 +101,7 @@ module School = {
     | Director => "A director"
     };
   module Nested = (
-    Foo: Bar,
+    Foo: Bar.Baz,
     {
       type a = Bar;
       let a = [|"1"|];
