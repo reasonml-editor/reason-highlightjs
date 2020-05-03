@@ -159,17 +159,14 @@ module.exports = function(hljs) {
   const JSX_MODE = {
     variants: [
       {
-        begin: "<>",
-      },
-      {
-        begin: "</>",
-      },
-      {
-        begin: "/>",
+        begin: "<>|</>|/>",
       },
       {
         begin: "</",
         contains: [
+          {
+            begin: RE_IDENT,
+          },
           {
             begin: RE_MODULE_IDENT,
             className: 'module-identifier',
