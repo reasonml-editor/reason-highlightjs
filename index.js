@@ -17,7 +17,7 @@ module.exports = function(hljs) {
     .join('|');
   }
 
-  var RE_IDENT = '~?[a-z_][0-9a-zA-Z_]*';
+  var RE_IDENT = '[a-z_][0-9a-zA-Z_]*';
   var RE_ATTRIBUTE = '[A-Za-z_][A-Za-z0-9_\\.]*';
   var RE_MODULE_IDENT = '[A-Z_][0-9a-zA-Z_]*';
 
@@ -84,7 +84,7 @@ module.exports = function(hljs) {
     relevance: 0,
     begin: "("+ orReValues([
       '->', '||', '&&', '++', '**', '+.', '+', '-.', '-',
-      '*.', '*', '/.', '/', '...', '|>', '===', '==', '^',
+      '*.', '*', '/.', '/', '...', '..', '|>', '===', '==', '^',
       ':=', '!', '>=', '<=',
     ]) + ")"
   };
