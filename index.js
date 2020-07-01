@@ -52,10 +52,10 @@ module.exports = function(hljs) {
         begin: '\\{(' + RE_IDENT + ')?\\|',
         end: '\\|(' + RE_IDENT + ')?\\}',
       },
-      // {
-      //   begin: '(' + RE_IDENT + ')?`',
-      //   end: '`',
-      // },
+      {
+        begin: '(' + RE_IDENT + ')?`',
+        end: '`',
+      },
     ]
   };
 
@@ -97,7 +97,7 @@ module.exports = function(hljs) {
   // as in variant constructor
   const CONSTRUCTOR_MODE = {
     className: 'constructor',
-    begin: '\\b([A-Z][0-9a-zA-Z_]*)|(`[a-zA-Z][0-9a-zA-Z_]*)|(#[a-zA-Z][0-9a-zA-Z_]*)\\b',
+    begin: '\\b([A-Z][0-9a-zA-Z_]*)|(#[a-zA-Z][0-9a-zA-Z_]*)\\b',
   };
 
   const ARRAY_MODES = {
