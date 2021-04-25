@@ -358,6 +358,7 @@ module.exports = function(hljs) {
   OPEN_OR_INCLUDE_MODULE_MODE.contains.push(MODULE_MODE)
 
   return {
+    name: 'ReasonML',
     aliases: ['re'],
     keywords: KEYWORDS,
     illegal: '(:\\-|:=|\\${|\\+=)',
